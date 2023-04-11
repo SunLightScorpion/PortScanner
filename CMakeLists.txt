@@ -3,4 +3,7 @@ project(PortScanner)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(PortScanner main.cpp)
+add_executable(
+        PortScanner
+        src/core.cpp
+)

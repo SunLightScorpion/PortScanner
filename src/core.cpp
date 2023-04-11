@@ -31,14 +31,12 @@ int main(int argc, char *argv[]) {
     addr.sin_family = AF_INET;
     addr.sin_addr.s_addr = inet_addr(argv[1]);
 
-    for (int port = 1; port <= 65535; ++port) {
+    for (int port = 1; port <= 65535; port++) {
         addr.sin_port = htons(port);
         if (connect(sock, (struct sockaddr *)&addr, sizeof(addr)) >= 0) {
             cout << "Port " << port << " is open\n";
         }
     }
-
-    close(sock);
 
     return 0;
 }
